@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516224953) do
+ActiveRecord::Schema.define(version: 20150516231158) do
+
+  create_table "containers", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "volume_ml"
+    t.boolean  "refillable"
+    t.date     "last_refill_date"
+    t.date     "expiration_date"
+    t.boolean  "empty"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "containers", ["user_id"], name: "index_containers_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

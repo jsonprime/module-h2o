@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @container.description %>
+</p>
+
+<p>
+  <strong>Volume ml:</strong>
+  <%= @container.volume_ml %>
+</p>
+
+<p>
+  <strong>Refillable:</strong>
+  <%= @container.refillable %>
+</p>
+
+<p>
+  <strong>Last refill date:</strong>
+  <%= @container.last_refill_date %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @container.expiration_date %>
+</p>
+
+<p>
+  <strong>Empty:</strong>
+  <%= @container.empty %>
+</p>
+
+<%= link_to 'Edit', edit_container_path(@container) %> |
+<%= link_to 'Back', containers_path %>
